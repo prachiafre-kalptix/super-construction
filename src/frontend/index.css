@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bricolage Grotesque - Display */
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* General Sans - Body */
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans-VariableItalic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  /* ──────────────────────────────────────────────
+     DARK theme (default + explicit .dark class)
+  ────────────────────────────────────────────── */
+  :root,
+  :root.dark {
+    --radius: 0.75rem;
+
+    /* Dark industrial theme */
+    --background: 0.18 0.01 260;
+    --foreground: 0.95 0.01 90;
+    --card: 0.22 0.015 255;
+    --card-foreground: 0.95 0.01 90;
+    --popover: 0.25 0.015 255;
+    --popover-foreground: 0.95 0.01 90;
+
+    /* Amber accent primary */
+    --primary: 0.73 0.18 55;
+    --primary-foreground: 0.13 0.01 260;
+
+    --secondary: 0.28 0.02 255;
+    --secondary-foreground: 0.9 0.01 90;
+
+    --muted: 0.26 0.015 255;
+    --muted-foreground: 0.62 0.02 255;
+
+    --accent: 0.32 0.025 255;
+    --accent-foreground: 0.95 0.01 90;
+
+    --destructive: 0.6 0.22 22;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.3 0.02 255;
+    --input: 0.28 0.02 255;
+    --ring: 0.73 0.18 55;
+
+    /* Success / income green */
+    --success: 0.65 0.18 145;
+    --success-foreground: 0.98 0 0;
+
+    /* Warning amber */
+    --warning: 0.78 0.16 75;
+    --warning-foreground: 0.13 0.01 260;
+
+    /* Chart colors */
+    --chart-1: 0.73 0.18 55;
+    --chart-2: 0.65 0.18 145;
+    --chart-3: 0.6 0.22 22;
+    --chart-4: 0.55 0.2 265;
+    --chart-5: 0.7 0.15 200;
+
+    /* Sidebar */
+    --sidebar: 0.16 0.015 260;
+    --sidebar-foreground: 0.95 0.01 90;
+    --sidebar-primary: 0.73 0.18 55;
+    --sidebar-primary-foreground: 0.13 0.01 260;
+    --sidebar-accent: 0.26 0.02 255;
+    --sidebar-accent-foreground: 0.95 0.01 90;
+    --sidebar-border: 0.28 0.02 255;
+    --sidebar-ring: 0.73 0.18 55;
+  }
+
+  /* ──────────────────────────────────────────────
+     LIGHT theme (.light class on html)
+  ────────────────────────────────────────────── */
+  :root.light {
+    --background: 0.97 0.005 90;
+    --foreground: 0.15 0.02 260;
+    --card: 0.99 0 0;
+    --card-foreground: 0.15 0.02 260;
+    --popover: 0.98 0.005 90;
+    --popover-foreground: 0.15 0.02 260;
+
+    /* Slightly deeper amber for light bg contrast */
+    --primary: 0.65 0.18 55;
+    --primary-foreground: 0.98 0 0;
+
+    --secondary: 0.93 0.01 90;
+    --secondary-foreground: 0.2 0.02 260;
+
+    --muted: 0.92 0.01 90;
+    --muted-foreground: 0.5 0.02 255;
+
+    --accent: 0.9 0.015 90;
+    --accent-foreground: 0.15 0.02 260;
+
+    --destructive: 0.55 0.22 22;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.85 0.01 90;
+    --input: 0.9 0.01 90;
+    --ring: 0.65 0.18 55;
+
+    /* Success / income green */
+    --success: 0.55 0.18 145;
+    --success-foreground: 0.98 0 0;
+
+    /* Warning amber */
+    --warning: 0.7 0.16 75;
+    --warning-foreground: 0.13 0.01 260;
+
+    /* Chart colors */
+    --chart-1: 0.65 0.18 55;
+    --chart-2: 0.55 0.18 145;
+    --chart-3: 0.55 0.22 22;
+    --chart-4: 0.5 0.2 265;
+    --chart-5: 0.6 0.15 200;
+
+    /* Sidebar */
+    --sidebar: 0.95 0.008 90;
+    --sidebar-foreground: 0.15 0.02 260;
+    --sidebar-primary: 0.65 0.18 55;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.9 0.015 90;
+    --sidebar-accent-foreground: 0.15 0.02 260;
+    --sidebar-border: 0.85 0.01 90;
+    --sidebar-ring: 0.65 0.18 55;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: "General Sans", system-ui, sans-serif;
+  }
+
+  .text-success {
+    color: oklch(var(--success));
+  }
+
+  .text-warning {
+    color: oklch(var(--warning));
+  }
+
+  .bg-success {
+    background-color: oklch(var(--success));
+  }
+
+  .bg-success\/10 {
+    background-color: oklch(var(--success) / 0.1);
+  }
+
+  .bg-warning {
+    background-color: oklch(var(--warning));
+  }
+
+  .bg-warning\/10 {
+    background-color: oklch(var(--warning) / 0.1);
+  }
+
+  .border-success {
+    border-color: oklch(var(--success));
+  }
+
+  .border-warning {
+    border-color: oklch(var(--warning));
+  }
+
+  /* Mobile phone frame on desktop */
+  .mobile-frame {
+    max-width: 430px;
+    margin: 0 auto;
+    min-height: 100dvh;
+    position: relative;
+  }
+
+  /* Dark mesh gradient background */
+  .app-bg {
+    background-color: oklch(var(--background));
+    background-image:
+      radial-gradient(
+        ellipse 80% 40% at 20% 10%,
+        oklch(0.73 0.18 55 / 0.04) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 80% 80%,
+        oklch(0.35 0.08 260 / 0.3) 0%,
+        transparent 60%
+      );
+  }
+
+  /* Light mode overrides for app-bg */
+  :root.light .app-bg {
+    background-color: oklch(var(--background));
+    background-image:
+      radial-gradient(
+        ellipse 80% 40% at 20% 10%,
+        oklch(0.65 0.18 55 / 0.06) 0%,
+        transparent 60%
+      ),
+      radial-gradient(
+        ellipse 60% 50% at 80% 80%,
+        oklch(0.85 0.05 90 / 0.4) 0%,
+        transparent 60%
+      );
+  }
+
+  /* Card shimmer */
+  .card-hover {
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .card-hover:active {
+    transform: scale(0.98);
+  }
+}
